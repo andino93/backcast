@@ -5,7 +5,7 @@ var Video = Backbone.Model.extend({
     this.set('id', video.id.videoId);
     this.set('title', video.snippet.title);
     this.set('description', video.snippet.description);
-    this.set('default', video.snippet.thumbnails.default.url)
+    this.set('url', video.snippet.thumbnails.default.url);
   },
 
   select: function() {

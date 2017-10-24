@@ -9,6 +9,7 @@ var AppView = Backbone.View.extend({
     // console.log(this.videos.forEach(model => console.log(model)))
     // console.log(this.model.attributes.get('title'))
     new VideoListView(this.collection),
+
     new VideoPlayerView({
       el: '.player'
     });
