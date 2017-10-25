@@ -4,15 +4,14 @@ var AppView = Backbone.View.extend({
   collection: new Videos(window.exampleVideoData),
   
   initialize: function() {
-    // console.log(this.videos.get('id'))
     this.render();
-    // console.log(this.videos.forEach(model => console.log(model)))
-    // console.log(this.model.attributes.get('title'))
-    new VideoListView(this.collection),
+
+    new VideoListView({collection: this.collection, model: Video}),
 
     new VideoPlayerView({
       el: '.player',
-      collection: this.collection
+      model: this.collection.models[0]
+      
     });
     new SearchView({
       el: '.search'
