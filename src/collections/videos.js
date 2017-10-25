@@ -8,17 +8,16 @@ var Videos = Backbone.Collection.extend({
     let data = {
       query: searchStr,
       maxResults: 5,
-      key: this.key,
-      
+      key: window.YOUTUBE_API_KEY,
+      part: 'snippet'
     };
     
-    $ajax({
+    $.ajax({
       type: 'GET',
       url: 'https://www.googleapis.com/youtube/v3/search',
       data: data,
       sucess: (data) => console.log('woot', JSON.stringify(data)),
-      error: (data) => console.log('failed', JSON.stringify(data))
+      error: (data) => console.log('failed', data)
     });
-  }
-  
+  },
 });

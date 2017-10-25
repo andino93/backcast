@@ -3,6 +3,10 @@ var AppView = Backbone.View.extend({
   el: '#app',
   collection: new Videos(window.exampleVideoData),
   
+  // event: {
+  //   'search'
+  // },
+  
   initialize: function() {
     this.render();
 
@@ -14,7 +18,8 @@ var AppView = Backbone.View.extend({
       
     });
     new SearchView({
-      el: '.search'
+      el: '.search',
+      collection: this.collection
     });
   },
 
